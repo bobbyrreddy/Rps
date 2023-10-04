@@ -23,12 +23,13 @@ let pSelection = prompt(`Choose -> Rock Paper or Scissors "R for Rock":: P for P
 
 /// use while loops 
 
-while (pSelection!='r'||pSelection!='p'||pSelection!='s'){
+while (pSelection!='r'&&pSelection!='p'&&pSelection!='s'){
     pSelection=pSelection.toLowerCase();
     console.log(pSelection);
     pSelection=prompt(`Choose only between 'R'  'P'  'S'  with no extra charectors`);
     pSelection=pSelection.toLowerCase();
-    if ( pSelection==='r'||pSelection==='p'||pSelection==='s') break;
+    console.log(pSelection);
+    // if ( pSelection==='r'||pSelection==='p'||pSelection==='s') break;
 }
 
 
