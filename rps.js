@@ -15,8 +15,65 @@ function getComputerchoice (){
 // player selection
 // computer selection. 
 
-const pSelection ="rock";
+let pSelection = prompt(`Choose -> Rock Paper or Scissors "R for Rock":: P for Paper:: S for Scissors`);
+// switch case to filter out player selection 'pSelection'
+
+
+
+
+/// use while loops 
+
+while (pSelection!='r'||pSelection!='p'||pSelection!='s'){
+    pSelection=pSelection.toLowerCase();
+    console.log(pSelection);
+    pSelection=prompt(`Choose only between 'R'  'P'  'S'  with no extra charectors`);
+    pSelection=pSelection.toLowerCase();
+    if ( pSelection==='r'||pSelection==='p'||pSelection==='s') break;
+}
+
+
+
+function choosePlayerSelection () {
+        if (pSelection==='r') {
+            console.log('you chose Rock');
+            } 
+            else if (pSelection==='p') {
+            console.log('you chose Paper');
+            }
+            else if (pSelection==='s') {
+            console.log('you chose Paper');
+            }
+        }
+choosePlayerSelection();  
+            
+        
+
+
+        // switch (pSelection) {
+        //     case 'r':
+        //         console.log('you chose Rock');
+        //         break;
+        //     case 'p':
+        //         console.log('you chose Paper');
+        //         break;
+        //     case 's':
+        //         console.log('you chose Scissors');
+        //         break;
+        
+        //     default:
+        //         pSelection=prompt(`Choose Rock 'R' Paper 'P' Scissors 'S'  without any extra charectors`);
+        //         break;
+        // }
+       
+
 const cSelection = getComputerchoice();
+
+// convert "pSelection" to lower case... 
+
+
+// 
+
+function filterRPSselection() {}
 
 function roundOfRPS (pSelection, cSelection){
     // returns a string
