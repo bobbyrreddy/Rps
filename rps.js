@@ -1,16 +1,4 @@
-function getComputerchoice (){
-    //randomly return rock paper or scissors
-    // math.ramdom. divide it by 3 and accordig to 
-    // the result it'll choose rock paper or scissors.
 
-    let x = Math.random();
-    console.log(x);
-
-
-
-    // use console to see if it is returning the expected
-    //result
-}
 
 // write a function which take two pameters 
 // player selection
@@ -31,7 +19,7 @@ let pSelection = prompt(`Choose -> Rock Paper or Scissors "R for Rock":: P for P
         console.log(pSelection);
         pSelection=prompt(`Choose only between 'R'  'P'  'S'  with no extra charectors`,` `);
         if (pSelection!=null) {
-           pSelection=pSelection.toLowerCase();
+        pSelection=pSelection.toLowerCase();
             console.log(pSelection); 
         }
         
@@ -74,9 +62,30 @@ choosePlayerSelection();
        
 
 
-
+        function getComputerchoice (){
+            //randomly return rock paper or scissors
+            // math.ramdom. divide it by 3 and accordig to 
+            // the result it'll choose rock paper or scissors.
+        
+            let x = Math.random();
+            let y = 'r';
+            if (x<.33) {
+                console.log(`computer chose Rock ${y}`);
+            } else  if (x=>.33 && x<.66){
+                y = 'p'
+                console.log(`computer chose Paper ${y}`);
+            } else if (x>.66) {
+                y = 's'
+                console.log(`computer chose Scissors ${y}`);
+            }
+            return y;
+            // use console to see if it is returning the expected
+            //result
+        }
 
 const cSelection = getComputerchoice();
+
+console.log (`cSelection ${cSelection}`);
 
 
 // convert "pSelection" to lower case... 
@@ -84,9 +93,37 @@ const cSelection = getComputerchoice();
 
 // 
 
-function filterRPSselection() {}
+function filterRPSselection() {
 
-function roundOfRPS (pSelection, cSelection){
+    console.log("in rps selection")
+}
+
+function roundOfRPS (){
+
+    let msg;
+
+    console.log(pSelection);
+    console.log(cSelection);
+
+    if (pSelection===cSelection) {
+        msg = 'its a tie' ;
+        
+    } else if (pSelection==='r'&& cSelection==='p'){
+        msg = 'computer won';
+        
+    }else if (pSelection==='p'&& cSelection==='r'){
+        msg = 'you won';
+    }else if (pSelection==='r'&& cSelection==='s'){
+        msg = 'you won';
+    }else if (pSelection==='s'&& cSelection==='r'){
+        msg = 'computer won';
+    }else if (pSelection==='s'&& cSelection==='p'){
+        msg = 'you won';
+    }else if (pSelection==='p'&& cSelection==='s'){
+        msg = 'computer won';   
+    }
+
+    return msg;
     // returns a string
 
     // you lose! Paper beats Rock
