@@ -3,7 +3,8 @@ function getComputerchoice (){
     // math.ramdom. divide it by 3 and accordig to 
     // the result it'll choose rock paper or scissors.
 
-
+    let x = Math.random();
+    console.log(x);
 
 
 
@@ -15,7 +16,7 @@ function getComputerchoice (){
 // player selection
 // computer selection. 
 
-let pSelection = prompt(`Choose -> Rock Paper or Scissors "R for Rock":: P for Paper:: S for Scissors`);
+let pSelection = prompt(`Choose -> Rock Paper or Scissors "R for Rock":: P for Paper:: S for Scissors`, ` `);
 // switch case to filter out player selection 'pSelection'
 
 
@@ -23,14 +24,19 @@ let pSelection = prompt(`Choose -> Rock Paper or Scissors "R for Rock":: P for P
 
 /// use while loops 
 
-while (pSelection!='r'&&pSelection!='p'&&pSelection!='s'){
-    pSelection=pSelection.toLowerCase();
-    console.log(pSelection);
-    pSelection=prompt(`Choose only between 'R'  'P'  'S'  with no extra charectors`);
-    pSelection=pSelection.toLowerCase();
-    console.log(pSelection);
-    // if ( pSelection==='r'||pSelection==='p'||pSelection==='s') break;
-}
+    while (pSelection!='r'&&pSelection!='p'&&pSelection!='s'&&pSelection!=null){
+
+
+        pSelection=pSelection.toLowerCase();
+        console.log(pSelection);
+        pSelection=prompt(`Choose only between 'R'  'P'  'S'  with no extra charectors`,` `);
+        if (pSelection!=null) {
+           pSelection=pSelection.toLowerCase();
+            console.log(pSelection); 
+        }
+        
+    }
+
 
 
 
@@ -42,7 +48,7 @@ function choosePlayerSelection () {
             console.log('you chose Paper');
             }
             else if (pSelection==='s') {
-            console.log('you chose Paper');
+            console.log('you chose Scissors');
             }
         }
 choosePlayerSelection();  
@@ -67,7 +73,11 @@ choosePlayerSelection();
         // }
        
 
+
+
+
 const cSelection = getComputerchoice();
+
 
 // convert "pSelection" to lower case... 
 
