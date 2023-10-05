@@ -20,7 +20,7 @@
 let cPoints = 0;
 let pPoints = 0;
 
-
+let gNO = 1;
 function game () {
 
 
@@ -53,13 +53,13 @@ function game () {
         let y = 'r';
 
             if (x < 0.33) {
-            console.log(`computer chose Rock ${y}`);
+            console.log(`computer chose Rock `);
             } else if (x => 0.33 && x < 0.66) {
             y = 'p';
-            console.log(`computer chose Paper ${y}`);
+            console.log(`computer chose Paper `);
             } else if (x > 0.66) {
             y = 's';
-            console.log(`computer chose Scissors ${y}`);
+            console.log(`computer chose Scissors `);
             }
             return y;
         // use console to see if it is returning the expected
@@ -77,25 +77,26 @@ function game () {
         if (pSelection===cSelection) {
             msg = 'its a tie' ;
         } else if (pSelection==='r'&& cSelection==='p'){
-            msg = 'computer won';
+            msg = `computer won round ${gNO}`;
             cPoints = 1 +cPoints;
         }else if (pSelection==='p'&& cSelection==='r'){
-            msg = 'you won';
+            msg = `you won round ${gNO}`;
             pPoints = 1 +pPoints;
         }else if (pSelection==='r'&& cSelection==='s'){
-            msg = 'you won';
+            msg = `you won round ${gNO}`;
             pPoints = 1 +pPoints;
         }else if (pSelection==='s'&& cSelection==='r'){
-            msg = 'computer won';
+            msg = `computer won round ${gNO}`;
             cPoints = 1 +cPoints;
         }else if (pSelection==='s'&& cSelection==='p'){
-            msg = 'you won';
+            msg = `you won round ${gNO}`;
             pPoints = 1 +pPoints;
         }else if (pSelection==='p'&& cSelection==='s'){
-            msg = 'computer won';
+            msg = `computer won round ${gNO}`;
             cPoints = 1 +cPoints;   
         }
         return msg;
+
     }
     
     console.log(roundOfRPS());
@@ -118,7 +119,7 @@ function game () {
                 console.log(pSelection); 
                 }
             }
-
+    gNO++;
 }
 
 
@@ -135,13 +136,13 @@ for (let i = 0; i < 4; i++) {
 
 if (cPoints>pPoints) {
     console.log(`computer has ${cPoints} points, you have ${pPoints} points`);
-    console.log('computer won');
-} else {
+    console.log('COMPUTER WINS');
+} else if (cPoints<pPoints){
     console.log(`computer has ${cPoints} points, you have ${pPoints} points`);
-    console.log('you won');
+    console.log('YOU WIN');
 }
 
 if (cPoints===pPoints) {
     console.log(`computer has ${cPoints} points, you have ${pPoints} points`);
-    console.log('its a Tie');
+    console.log('its a TIE');
 }
