@@ -18,6 +18,7 @@ rockBtn.addEventListener('click',()=> {
     //display your selection
     //tigger computer selection.
     getComputerchoice (); 
+    roundOfRPS ();
  
     //display computer selection
     }, 
@@ -30,6 +31,7 @@ paperBtn.addEventListener('click',()=> {
     //display your selection
     //tigger computer selection.
     getComputerchoice (); 
+    roundOfRPS ();
  
     //display computer selection
     }, 
@@ -42,9 +44,9 @@ scissorsBtn.addEventListener('click',()=> {
     //display your selection
     //tigger computer selection.
     getComputerchoice (); 
+    roundOfRPS ();
     //display computer selection
     // round of game
-    roundOfRPS ();
     }, 
     {once: true});
 
@@ -103,37 +105,40 @@ console.log(`outside the function ${cSelection}`);
 // the game begins
 
 
-function roundOfRPS(params) {
+function roundOfRPS() {
+
+    const pTag_won_msg = document.createElement('p');
+
+
+    if (pSelection===cSelection) {
+        pTag_won_msg.textContent = 'its a tie' ;
+        btn_grp_div.appendChild(pTag_won_msg);
+    } else if (pSelection==='rock'&& cSelection==='paper'){
+        pTag_won_msg.textContent = `computer won `;
+        btn_grp_div.appendChild(pTag_won_msg);
+    }else if (pSelection==='paper'&& cSelection==='rock'){
+        pTag_won_msg.textContent = `you won `;
+        btn_grp_div.appendChild(pTag_won_msg);
+    }else if (pSelection==='rock'&& cSelection==='scissors'){
+        pTag_won_msg.textContent = `you won `;
+        btn_grp_div.appendChild(pTag_won_msg);
+    }else if (pSelection==='scissors'&& cSelection==='rock'){
+        pTag_won_msg.textContent = `computer won `;
+        btn_grp_div.appendChild(pTag_won_msg);
+    }else if (pSelection==='scissors'&& cSelection==='paper'){
+        pTag_won_msg.textContent = `you won `;
+        btn_grp_div.appendChild(pTag_won_msg);
+    }else if (pSelection==='paper'&& cSelection==='scissors'){
+        pTag_won_msg.textContent = `computer won `; 
+        btn_grp_div.appendChild(pTag_won_msg);  
+    }
+    
+
+
+
     
 }
 
-// function roundOfRPS (){
-//     let msg;
-
-//     if (pSelection===getComputerchoice()) {
-//         msg = 'its a tie' ;
-//     } else if (pSelection==='r'&& getComputerchoice()==='p'){
-//         msg = `computer won round ${gNO}`;
-//         cPoints = 1 +cPoints;
-//     }else if (pSelection==='p'&& getComputerchoice()==='r'){
-//         msg = `you won round ${gNO}`;
-//         pPoints = 1 +pPoints;
-//     }else if (pSelection==='r'&& getComputerchoice()==='s'){
-//         msg = `you won round ${gNO}`;
-//         pPoints = 1 +pPoints;
-//     }else if (pSelection==='s'&& getComputerchoice()==='r'){
-//         msg = `computer won round ${gNO}`;
-//         cPoints = 1 +cPoints;
-//     }else if (pSelection==='s'&& getComputerchoice()==='p'){
-//         msg = `you won round ${gNO}`;
-//         pPoints = 1 +pPoints;
-//     }else if (pSelection==='p'&& getComputerchoice()==='s'){
-//         msg = `computer won round ${gNO}`;
-//         cPoints = 1 +cPoints;   
-//     }
-//     return msg;
-
-// }
 
 
 // console.log(`computer choice the return function ${roundOfRPS ()}`);
